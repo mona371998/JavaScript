@@ -23,6 +23,7 @@
 
 <button onclick="window.print()">Print this page</button> -->
 <!-- page 4 "thiskeyword" -->
+//1. this refers to the "owner" of the function
 <Script>
 let laptop1 = {
     cpu: 'i9',
