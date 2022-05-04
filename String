@@ -1,0 +1,80 @@
+/*
+/*================================================================
+String Notes:A string is a sequence of one or more characters that may consist of letters, numbers, or symbols.*/
+Program Example:====================================
+<body>
+<h2>JavaScript Strings</h2>
+<p>Strings are written inside quotes. You can use single or double quotes:</p>
+<p id="demo"></p>
+<script>
+let carName1 = "Volvo XC60"; // Double quotes
+let carName2 = 'Volvo XC60'; // Single quotes
+document.getElementById("demo").innerHTML =
+carName1 + " " + carName2; 
+</script>
+</body>
+=======================================================
+Template: let text = `Hello World!`
+template literals: let text = `He's often called "Johnny"`;
+>>The method is called string interpolation
+  The syntax is:${...}
+Example 1:let firstName = "John";
+        let lastName = "Doe";
+        let text = `Welcome ${firstName}, ${lastName}!`;
+Example 2: let price = 10;
+           let VAT = 0.25;
+           let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+>>HTML Templates
+Example 1:let header = "Templates Literals";
+          let tags = ["template literals", "javascript", "es6"];
+          let html = `<h2>${header}</h2><ul>`;
+          for (const x of tags) {
+          html += `<li>${x}</li>`;}
+          html += `</ul>`;
+
+/*method:
+let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = txt.length;
+/*method:
+1. (.Length)
+eg:let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+   let length = txt.length;
+2.slice(start, end); 
+3. substring(start, end) 
+(Note: substring() is similar to slice() difference is that start and end values less than 0 are treated as 0 in substring())
+4.substr(start, length)
+(Note:(substr() is similar to slice(). The difference is that the second parameter specifies the length of the extracted part)
+5.replace()
+(note: /i- replace if it is upper or lower char and /g-replace all the string)
+6. toUpperCase()
+7. toLowerCase()
+8. concat()(Join)
+9.trim()(note: removes whitespace from both sides of a string)
+10.padStart(),padEnd() (note:support padding at the beginning and at the end of a string)
+11. charAt(position) (note: the character at a specified index (position))
+12. charCodeAt(position) (note: unicode of the character at a specified index)
+13.ECMAScript 5 (2009) allows property access [ ] on strings
+ (Note: eg: let text = "HELLO WORLD";
+            let char = text[0];// output:H
+14.text.split(",")    // Split on commas
+     text.split(" ")    // Split on spaces
+     text.split("|")    // Split on pipe         
+15.String indexOf()
+16.String lastIndexOf()
+17.String startsWith()(Note:startsWith() method is case sensitive.)
+18.String endsWith()
+19. search()
+(Note:The search() method cannot take a second start position argument.
+The indexOf() method cannot take powerful search values (regular expressions))
+20.match()
+21.includes()(Note: returns true if a string contains a specified value)
+*/
+
+
+
+
+
+
+
+
+*/
