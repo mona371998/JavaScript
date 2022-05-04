@@ -1,0 +1,3 @@
+/*Notes:
+JavaScript Numbers are Always 64-bit Floating Point
+JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.
