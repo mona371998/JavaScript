@@ -1,0 +1,205 @@
+An array is a special variable, which can hold more than one value
+Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+example: 1.const cars = ["Saab", "Volvo", "BMW"];
+         2.let car1 = "Saab";
+           let car2 = "Volvo";
+           let car3 = "BMW";
+ Creating an Array
+ templects: const array_name = [item1, item2, ...];
+    1.const cars = [
+          "Saab",
+          "Volvo",
+           "BMW"
+        ];
+     2.const cars = [];
+       cars[0]= "Saab";
+       cars[1]= "Volvo";
+       cars[2]= "BMW";
+  
+  Using the JavaScript Keyword new
+   const cars = new Array("Saab", "Volvo", "BMW");
+    Note:There is no need to use new Array().
+          For simplicity, readability and execution speed, use the array literal method.   
+
+Example: const cars = ["Saab", "Volvo", "BMW"];
+let car = cars[0];      
+
+Access the Full Array  
+With JavaScript, the full array can be accessed by referring to the array name:
+  Example:const cars = ["Saab", "Volvo", "BMW"];
+          document.getElementById("demo").innerHTML = cars;
+
+Array Properties and Methods  
+cars.length   // Returns the number of elements
+cars.sort()   // Sorts the array
+
+Looping Array Elements
+for loop:---------------
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+Array.forEach()-----------------------
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+push()-Adds a new element---------------------    
+Example: const fruits = ["Banana", "Orange", "Apple"];
+         fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+length--------------------------
+const fruits = ["Banana", "Orange", "Apple"];
+fruits[fruits.length] = "Lemon";  // Adds "Lemon" to fruits
+WARNING !---------------------------
+const fruits = ["Banana", "Orange", "Apple"];
+fruits[6] = "Lemon";  // Creates undefined "holes" in fruits
+          
+>>The Difference Between Arrays and Objects       
+In JavaScript, arrays use numbered indexes.  
+In JavaScript, objects use named indexes.      
+You should use objects when you want the element names to be strings (text).
+You should use arrays when you want the element names to be numbers.
+>>How to Recognize an Array with the help of Array.isArray(); and fruits instanceof Array
+const fruits = ["Banana", "Orange", "Apple"];
+let type = typeof fruits;//object
+Array.isArray(fruits);//true
+
+Converting Arrays to Strings---------------------------------
+toString()
+Example:
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+
+join()----
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+output: Banana * Orange * Apple * Mango
+
+Popping(out) and Pushing(into)---------------------------------------
+The pop() method removes the last element from an array:
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();//last element will remove
+output-Banana,Orange,Apple
+>>The pop() method returns the value that was "popped out":
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits.pop();//Mango
+
+
+The push() method adds a new element to an array
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi");//Banana,Orange,Apple,Mango,Kiwi
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo1").innerHTML = fruits.push("Kiwi");//5
+document.getElementById("demo2").innerHTML = fruits;//Banana,Orange,Apple,Mango,Kiwi
+Shifting Elements-----------------------------------------
+Shifting is equivalent to popping, but working on the first element instead of the last.
+shift() method removes the first array element and "shifts" all other elements to a lower index
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift();//Orange,Apple,Mango
+
+The shift() method returns the value that was "shifted out":
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits.shift();//Banana
+document.getElementById("demo2").innerHTML = fruits;//Orange,Apple,Mango
+
+Array unshift()----------------------------------------
+The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits.unshift("Lemon");//Banana,Orange,Apple,Mango
+document.getElementById("demo2").innerHTML = fruits;
+//Lemon,Banana,Orange,Apple,Mango
+
+The unshift() method returns the new array length.
+Example:
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits.unshift("Lemon");//5
+document.getElementById("demo2").innerHTML = fruits; //Lemon,Banana,Orange,Apple,Mango
+</script>
+
+Changing Elements---------------------------
+Array elements are accessed using their index number:
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[0] = "Kiwi";//Kiwi,Orange,Apple,Mango
+
+Array length----------------------------------
+The length property provides an easy way to append a new element to an array:
+Example
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;//Banana,Orange,Apple,Mango
+fruits[fruits.length] = "Kiwi";
+document.getElementById("demo2").innerHTML = fruits;//Banana,Orange,Apple,Mango,Kiwi
+</script>
+
+Array delete()------------------------------------------
+Warning !------------------------------
+Array elements can be deleted using the JavaScript operator delete.
+Using delete leaves undefined holes in the array.
+Use pop() or shift() instead.
+  Example:<script>
+         const fruits = ["Banana", "Orange", "Apple", "Mango"];
+         document.getElementById("demo1").innerHTML =
+          "The first fruit is: " + fruits[0]; //The first fruit is: Banana
+          delete fruits[0];
+           document.getElementById("demo2").innerHTML =
+           "The first fruit is: " + fruits[0]; //The first fruit is: undefined
+             </script>
+Merging (Concatenating) Arrays-------------------------------
+The concat() method creates a new array by merging (concatenating) existing arrays:
+<script>
+const myGirls = ["Cecilie", "Lone"];
+const myBoys = ["Emil", "Tobias", "Linus"];
+const myChildren = myGirls.concat(myBoys);
+document.getElementById("demo").innerHTML = myChildren;//Cecilie,Lone,Emil,Tobias,Linus
+</script>
+
+Splicing and Slicing Arrays-------------------------------------------
+The splice() method adds new items to an array.
+Example:
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;//Banana,Orange,Apple,Mango
+fruits.splice(2, 0, "Lemon", "Kiwi");
+document.getElementById("demo2").innerHTML = fruits;//Banana,Orange,Lemon,Kiwi,Apple,Mango
+</script>
+The slice() method slices out a piece of an array.
+Example:
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = "Original Array:<br> " + fruits;//Original Array:
+Banana,Orange,Apple,Mango
+let removed = fruits.splice(2, 2, "Lemon", "Kiwi"); 
+document.getElementById("demo2").innerHTML = "New Array:<br>" + fruits;//New Array:
+Banana,Orange,Lemon,Kiwi
+document.getElementById("demo3").innerHTML = "Removed Items:<br> " + removed;//Removed Items:
+Apple,Mango 
+</script>
+ 
+ Sorting an Array------------------------
+ The sort() method sorts an array alphabetically:
+ Example
+ const fruits = ["Banana", "Orange", "Apple", "Mango"];
+ fruits.sort();
+ 
+ Reversing an Array---------------------------
+ const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();
+fruits.reverse();
+
+sort()--------------------------------------------
