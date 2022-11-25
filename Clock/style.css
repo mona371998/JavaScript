@@ -1,0 +1,15 @@
+*{
+    background-color: black;
+}
+#MyClockDisplay{
+
+}
+.clock {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    color: blue;
+    font-size: 7em;
+    size: 12rem;
+}
